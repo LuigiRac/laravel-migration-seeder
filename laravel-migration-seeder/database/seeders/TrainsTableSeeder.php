@@ -22,12 +22,12 @@ class TrainsTableSeeder extends Seeder
             $newTrain -> company = $faker -> company;
             $newTrain -> departure_station = $faker -> city;
             $newTrain -> arrival_station = $faker -> city;
-            $newTrain -> departure_time = $faker -> time;
-            $newTrain -> arrival_time = $faker -> time;
-            $newTrain -> train_code = $faker -> bothify('?????-#####');
+            $newTrain -> departure_time = $faker->dateTimeThisMonth();
+            $newTrain -> arrival_time = $faker->dateTimeThisMonth('+1 week');
+            $newTrain -> train_code = $faker -> bothify('????-####');
             $newTrain -> total_carriages = $faker -> numberBetween(1,6);
-            $newTrain -> is_on_time = $faker -> $boolean;
-            $newTrain -> is_cancelled = $faker -> $boolean;
+            $newTrain -> is_on_time = $faker -> boolean;
+            $newTrain -> is_cancelled = $faker -> boolean;
 
             $newTrain -> save();
 
